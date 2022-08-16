@@ -11,7 +11,7 @@ const App = () => {
 /* here we apply the values to the operators */
   const updateCalc = value => {
     if (
-      ops.includes(value) && calc === '' || ops.includes(value) && ops.includes(calc.slice(-1))
+      ((ops.includes(value)) && (calc === '')) || ((ops.includes(value)) && (ops.includes(calc.slice(-1))))
     ) {
       return;
     }
@@ -23,20 +23,6 @@ const App = () => {
     }
   }
   /* if the last item was not a value/operator, we use evaluate to do calculation */
-
-
-  // const createNums = () => {
-  //   const nums = [];
-
-  //   for (let i = 1; i < 10; i++) {
-  //     nums.push(
-  //       <button onClick={() => updateCalc(i.toString())} key={i}> 
-  //         {i}
-  //       </button>
-  //     )
-  //   }
-  //   return nums;
-  // } /* function to write out an array of digits to store the array elements */
 
 const CreateNums = (props) => {
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -55,7 +41,7 @@ const CreateNums = (props) => {
   } /* this calculates total when = is pressed */
 
   const deleteLast = () => {
-    if (calc == '') {
+    if (calc === '') {
       return;
     } 
     const value = calc.slice(0, -1)
